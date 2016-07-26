@@ -1,29 +1,24 @@
+<div class="container">
+<h1 class="text-center">Bienvenido a el recurso de pins</h1>
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center">Bienvenido a el recurso de pins</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @pins.each do |pin| %>
-      <tr>
-        <td ><%= image_tag(pin.photo, :style => 'width:400px') %></td>
-        <td><%= pin.description  %>&nbsp;&nbsp;&nbsp;</td> 
-        <td><%= link_to 'Show', pin %> &nbsp;</td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %> &nbsp;</td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="cold-md-3">
+      <div class="thumbnail">
+       <%= pin.description %>&nbsp;&nbsp;&nbsp;
+        <%= image_tag(pin.photo, :class => 'img-responsive') %>
+
+        <div class="text-center">       
+        <%= link_to 'Show', pin %> &nbsp;
+        <%= link_to 'Edit', edit_pin_path(pin) %> &nbsp;
+        <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+   </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
 <%= link_to 'New Pin', new_pin_path %>
+</div>
