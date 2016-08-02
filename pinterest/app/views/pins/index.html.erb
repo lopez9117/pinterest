@@ -6,9 +6,9 @@
     <div class="cold-md-3">
       <div class="thumbnail">
        <%= pin.description %>&nbsp;&nbsp;&nbsp;
-        <%= image_tag(pin.photo, :class => 'img-responsive') %>
+        <%= image_tag("pin.photo", :class => 'img-responsive') %>
 
-        <div class="text-center">       
+        <div class="text-center">
         <%= link_to 'Show', pin %> &nbsp;
         <%= link_to 'Edit', edit_pin_path(pin) %> &nbsp;
         <% if user_signed_in? %>
